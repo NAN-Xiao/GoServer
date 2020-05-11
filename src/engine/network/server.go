@@ -1,6 +1,7 @@
 package network
 
 import (
+	"errors"
 	"fmt"
 	"net"
 	serverinterface "server/src/engine/interface"
@@ -13,6 +14,15 @@ type Server struct {
 	Port int
 }
 
+func CallBack(conn *net.TCPConn, data []byte, len int) error {
+
+	if _, err := conn.Write(data[:len]); err != nil {
+
+		return  errors.New("connection write error")
+	}
+	return nil
+}
+
 func (s *Server) Start() {
 	go func() {
 		addr, err := net.ResolveTCPAddr(s.IPV, fmt.Sprintf("%s:%d", s.IP, s.Port))
@@ -23,25 +33,16 @@ func (s *Server) Start() {
 		if err != nil {
 			return
 		}
-
+		var cid uint32
+		cid = 0
 		for {
-			connect, err := listener.AcceptTCP()
+			conn, err := listener.AcceptTCP()
 			if err != nil {
 				continue
 			}
-			go func() {
-				for {
-					buf := make([]byte, 512)
-					cnt, err := connect.Read(buf)
-					if err != nil {
-						continue
-					}
-					if _, err := connect.Write(buf[:cnt]); err != nil {
-						continue
-					}
-				}
-
-			}()
+			connect := NewConnection(conn, cid, CallBack)
+			cid++
+			go connect.Start()
 		}
 	}()
 }
@@ -52,9 +53,7 @@ func (s *Server) Stop() {
 
 func (s *Server) Serve() {
 	s.Start()
-	select {
-
-	}
+	select {}
 }
 
 func NewServer(name string) serverinterface.IServer {

@@ -1,6 +1,6 @@
 package serverinterface
 
-type IServer interface{
+type IServer interface {
 	Start()
 	Stop()
 	Serve()

@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6aa61cfe-7556-4772-9385-8ba021e5b9fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/demo/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +47,15 @@
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\GoServer\GoServer\src\engine\coreface" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\GoServer\GoServer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GoServer\GoServer\engine\src" />
+      <recent name="E:\GoServer\GoServer\demo" />
+      <recent name="E:\GoServer\GoServer" />
+      <recent name="E:\GoServer\GoServer\src\engine" />
+      <recent name="E:\GoServer\GoServer\src\engine\coreface" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,5 +112,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1589272695183" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/engine/src/network/connection.go</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

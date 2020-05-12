@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"server/demo/engine/coreface"
-	"server/demo/engine/network"
+	"server/engine/src/coreface"
+	"server/engine/src/network"
 )
 
 type TestRouter struct {

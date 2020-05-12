@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	serverinterface "server/src/engine/interface"
+	"server/src/engine/coreface"
 )
 
 type Server struct {
@@ -18,7 +18,7 @@ func CallBack(conn *net.TCPConn, data []byte, len int) error {
 
 	if _, err := conn.Write(data[:len]); err != nil {
 
-		return  errors.New("connection write error")
+		return errors.New("connection write error")
 	}
 	return nil
 }
@@ -56,7 +56,7 @@ func (s *Server) Serve() {
 	select {}
 }
 
-func NewServer(name string) serverinterface.IServer {
+func NewServer(name string) coreface.IServer {
 	s := &Server{
 		Name: name,
 		IPV:  "tcp4",

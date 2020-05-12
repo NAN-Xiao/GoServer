@@ -1,8 +1,6 @@
-package serverface
+package coreface
 
-type  IRequest interface {
-
+type IRequest interface {
 	GetConnection() *IConnection
 	Getdata() []byte
-
 }

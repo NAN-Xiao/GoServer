@@ -2,26 +2,15 @@ package network
 
 import (
 	"net"
-	serverface "server/src/engine/interface"
+	"server/src/engine/coreface"
 )
 
 type Connection struct {
 	_conn     *net.TCPConn
 	_id       uint32
 	_isClose  bool
-	_handle   serverface.HandleFunc
+	_handle   coreface.HandleFunc
 	_exitChan chan bool
-}
-
-func NewConnection(conn *net.TCPConn, id uint32, callback serverface.HandleFunc) *Connection {
-	c := &Connection{
-		_conn:     conn,
-		_id:       id,
-		_isClose:  false,
-		_handle:   callback,
-		_exitChan: make(chan bool, 1),
-	}
-	return c
 }
 
 func (c *Connection) Read() {
@@ -37,11 +26,9 @@ func (c *Connection) Start() {
 		if err != nil {
 			continue
 		}
-
-		if	err := c._handle(c._conn, buf, cnt);err!=nil{
+		if err := c._handle(c._conn, buf, cnt); err != nil {
 			break
 		}
-
 	}
 }
 func (c *Connection) Stop() {
@@ -51,7 +38,6 @@ func (c *Connection) Stop() {
 	c._isClose = true
 	c._conn.Close()
 	close(c._exitChan)
-
 }
 func (c *Connection) GetConnectiong() *net.TCPConn {
 	return c._conn
@@ -64,4 +50,14 @@ func (c *Connection) GetRemotDir() net.Addr {
 }
 func (c *Connection) Sent(data []byte) error {
 	return nil
+}
+func NewConnection(conn *net.TCPConn, id uint32, callback coreface.HandleFunc) coreface.IConnection {
+	c := &Connection{
+		_conn:     conn,
+		_id:       id,
+		_isClose:  false,
+		_handle:   callback,
+		_exitChan: make(chan bool, 1),
+	}
+	return c
 }

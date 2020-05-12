@@ -1,4 +1,4 @@
-package serverface
+package coreface
 
 import "net"
 
@@ -11,4 +11,4 @@ type IConnection interface {
 	Sent(data []byte) error
 }
 
-type HandleFunc func(*net.TCPConn,[]byte,int)error
+type HandleFunc func(*net.TCPConn, []byte, int) error

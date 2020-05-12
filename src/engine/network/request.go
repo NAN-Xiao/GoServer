@@ -13,6 +13,6 @@ func (r *Request) GetConnection() coreface.IConnection {
 	return r.conn
 }
 
-func (r *Request) Getdata() []byte {
+func (r *Request) GetData() []byte {
 	return r.data
 }

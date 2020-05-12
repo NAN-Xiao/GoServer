@@ -8,10 +8,11 @@ import (
 )
 
 type Server struct {
-	Name string
-	IPV  string
-	IP   string
-	Port int
+	Name   string
+	IPV    string
+	IP     string
+	Port   int
+	Router coreface.IRouter
 }
 
 func CallBack(conn *net.TCPConn, data []byte, len int) error {
@@ -40,7 +41,7 @@ func (s *Server) Start() {
 			if err != nil {
 				continue
 			}
-			connect := NewConnection(conn, cid, CallBack)
+			connect := NewConnection(conn, cid, s.Router)
 			cid++
 			go connect.Start()
 		}
@@ -55,13 +56,17 @@ func (s *Server) Serve() {
 	s.Start()
 	select {}
 }
+func (s *Server) AddRouter(router coreface.IRouter) {
+	s.Router = router
+}
 
 func NewServer(name string) coreface.IServer {
 	s := &Server{
-		Name: name,
-		IPV:  "tcp4",
-		IP:   "0.0.0.0",
-		Port: 8999,
+		Name:   name,
+		IPV:    "tcp4",
+		IP:     "0.0.0.0",
+		Port:   8999,
+		Router: nil,
 	}
 	return s
 }

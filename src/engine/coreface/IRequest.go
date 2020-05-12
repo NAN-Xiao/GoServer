@@ -1,6 +1,6 @@
 package coreface
 
 type IRequest interface {
-	GetConnection() *IConnection
-	Getdata() []byte
+	GetConnection() IConnection
+	GetData() []byte
 }

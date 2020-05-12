@@ -9,8 +9,8 @@ type Connection struct {
 	_conn     *net.TCPConn
 	_id       uint32
 	_isClose  bool
-	_handle   coreface.HandleFunc
 	_exitChan chan bool
+	_router   coreface.IRouter
 }
 
 func (c *Connection) Read() {
@@ -20,15 +20,24 @@ func (c *Connection) Read() {
 func (c *Connection) Start() {
 	go c.Read()
 	defer c.Stop()
+
 	for {
 		buf := make([]byte, 512)
-		cnt, err := c._conn.Read(buf)
+		_, err := c._conn.Read(buf)
 		if err != nil {
 			continue
 		}
-		if err := c._handle(c._conn, buf, cnt); err != nil {
-			break
+		req := Request{
+			conn: c,
+			data: buf,
 		}
+		//router
+		go func(request coreface.IRequest) {
+			c._router.PreHandle(request)
+			c._router.Handle(request)
+			c._router.PostHandle(request)
+		}(&req)
+
 	}
 }
 func (c *Connection) Stop() {
@@ -51,13 +60,14 @@ func (c *Connection) GetRemotDir() net.Addr {
 func (c *Connection) Sent(data []byte) error {
 	return nil
 }
-func NewConnection(conn *net.TCPConn, id uint32, callback coreface.HandleFunc) coreface.IConnection {
+
+func NewConnection(conn *net.TCPConn, id uint32, router coreface.IRouter) coreface.IConnection {
 	c := &Connection{
 		_conn:     conn,
 		_id:       id,
 		_isClose:  false,
-		_handle:   callback,
 		_exitChan: make(chan bool, 1),
+		_router:   router,
 	}
 	return c
 }

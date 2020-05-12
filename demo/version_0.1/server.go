@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"server/engine/src/coreface"
-	"server/engine/src/network"
+	"server/src/engine/coreface"
+	"server/src/engine/network"
 )
 
 type TestRouter struct {
@@ -22,7 +22,7 @@ func (tr *TestRouter) PostHandle(request coreface.IRequest) {
 
 func main() {
 	fmt.Println("start server")
-	server := network.NewServer("v1")
+	server := network.NewServer()
 	server.AddRouter(&TestRouter{})
 	server.Serve()
 }

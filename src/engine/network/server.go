@@ -4,7 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"server/engine/src/coreface"
+	conf2 "server/src/engine/conf"
+	"server/src/engine/coreface"
 )
 
 type Server struct {
@@ -60,12 +61,12 @@ func (s *Server) AddRouter(router coreface.IRouter) {
 	s.Router = router
 }
 
-func NewServer(name string) coreface.IServer {
+func NewServer() coreface.IServer {
 	s := &Server{
-		Name:   name,
+		Name:   conf2.G_serverConfig.NAME,
 		IPV:    "tcp4",
-		IP:     "0.0.0.0",
-		Port:   8999,
+		IP:     conf2.G_serverConfig.HOST,
+		Port:   conf2.G_serverConfig.TCP_PORT,
 		Router: nil,
 	}
 	return s

@@ -1,6 +1,8 @@
 package network
 
-import "server/engine/src/coreface"
+import (
+	"server/src/engine/coreface"
+)
 
 type BaseRouter struct {
 }

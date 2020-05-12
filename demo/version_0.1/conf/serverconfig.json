@@ -1,0 +1,9 @@
+{
+  "SERVER":"",
+  "HOST":"0.0.0.0",
+  "TCP_PORT":8999,
+  "NAME":"GameServer",
+
+  "VERSION":"" ,
+  "MAX_CON" :30
+}

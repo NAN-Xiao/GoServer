@@ -1,7 +1,7 @@
 package network
 
 import (
-	"server/engine/src/coreface"
+	"server/src/engine/coreface"
 )
 
 type Request struct {

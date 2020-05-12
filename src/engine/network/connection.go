@@ -2,7 +2,7 @@ package network
 
 import (
 	"net"
-	"server/engine/src/coreface"
+	"server/src/engine/coreface"
 )
 
 type Connection struct {

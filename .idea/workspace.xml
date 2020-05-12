@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aa61cfe-7556-4772-9385-8ba021e5b9fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/version_0.1/conf/serverconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/conf/ServerConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GoServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GoServer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/network/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/connection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/network/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/network/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/network/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/network/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo/version_0.1/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/coreface/IConnection.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/coreface/IConnection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/coreface/IRequest.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/coreface/IRequest.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/coreface/IRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/coreface/IRouter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/coreface/IServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/coreface/IServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/network/connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/network/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/network/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/network/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/network/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="C:\Go" />
+  <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -43,28 +51,56 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/engine" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/engine/src" />
+      <recent name="$PROJECT_DIR$/demo/version_0.1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\GoServer\GoServer" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\GoServer\GoServer\engine\src" />
-      <recent name="E:\GoServer\GoServer\demo" />
-      <recent name="E:\GoServer\GoServer" />
-      <recent name="E:\GoServer\GoServer\src\engine" />
-      <recent name="E:\GoServer\GoServer\src\engine\coreface" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build server.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goserver" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/" />
+      <package value="server" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GoServer" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/demo/version_0.1/server.go" />
+      <package value="server/demo/version_0.1" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go run ServerConfig.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="GoServer" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/engine/src/conf/ServerConfig.go" />
+      <package value="server" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go run server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="GoServer" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/engine/src/network/server.go" />
       <package value="server" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -80,6 +116,30 @@
       <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build server.go" />
+      <item itemvalue="Go Build.go run server.go" />
+      <item itemvalue="Go Build.go run ServerConfig.go" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Go Build.go run ServerConfig.go" />
+        <item itemvalue="Go Build.go run server.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -92,14 +152,70 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="304" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589300324760">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="304" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.928@0.23.1680.928" timestamp="1589300324760" />
+    <state x="535" y="122" key="#go_build_ServerConfig.go" timestamp="1589296930668">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="535" y="122" key="#go_build_ServerConfig.go/0.23.1680.928@0.23.1680.928" timestamp="1589296930668" />
+    <state x="535" y="122" key="#go_build_server.go" timestamp="1589296380787">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="535" y="122" key="#go_build_server.go/0.23.1680.928@0.23.1680.928" timestamp="1589296380787" />
+    <state x="535" y="122" key="#go_run_ServerConfig.go" timestamp="1589296955395">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="535" y="122" key="#go_run_ServerConfig.go/0.23.1680.928@0.23.1680.928" timestamp="1589296955395" />
+    <state x="535" y="122" key="#go_run_server.go" timestamp="1589296394574">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="535" y="122" key="#go_run_server.go/0.23.1680.928@0.23.1680.928" timestamp="1589296394574" />
     <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1589273870241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589273870241" />
+    <state width="467" height="466" key="DebuggerActiveHint" timestamp="1589300486013">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="467" height="466" key="DebuggerActiveHint/0.23.1680.928@0.23.1680.928" timestamp="1589300486013" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1589270297613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589270297613" />
+    <state width="1638" height="306" key="GridCell.Tab.0.bottom" timestamp="1589300696093">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.0.bottom/0.23.1680.928@0.23.1680.928" timestamp="1589300696093" />
+    <state width="1638" height="306" key="GridCell.Tab.0.center" timestamp="1589300696092">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.0.center/0.23.1680.928@0.23.1680.928" timestamp="1589300696092" />
+    <state width="1638" height="306" key="GridCell.Tab.0.left" timestamp="1589300696092">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.0.left/0.23.1680.928@0.23.1680.928" timestamp="1589300696091" />
+    <state width="1638" height="306" key="GridCell.Tab.0.right" timestamp="1589300696093">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.0.right/0.23.1680.928@0.23.1680.928" timestamp="1589300696093" />
+    <state width="1638" height="306" key="GridCell.Tab.1.bottom" timestamp="1589300696095">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.1.bottom/0.23.1680.928@0.23.1680.928" timestamp="1589300696095" />
+    <state width="1638" height="306" key="GridCell.Tab.1.center" timestamp="1589300696094">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.1.center/0.23.1680.928@0.23.1680.928" timestamp="1589300696094" />
+    <state width="1638" height="306" key="GridCell.Tab.1.left" timestamp="1589300696094">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.1.left/0.23.1680.928@0.23.1680.928" timestamp="1589300696094" />
+    <state width="1638" height="306" key="GridCell.Tab.1.right" timestamp="1589300696094">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state width="1638" height="306" key="GridCell.Tab.1.right/0.23.1680.928@0.23.1680.928" timestamp="1589300696094" />
     <state x="782" y="241" key="RollbackChangesDialog" timestamp="1589263245232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -112,16 +228,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1589272695183" />
+    <state x="498" y="130" width="683" height="714" key="find.popup" timestamp="1589295139593">
+      <screen x="0" y="23" width="1680" height="928" />
+    </state>
+    <state x="498" y="130" width="683" height="714" key="find.popup/0.23.1680.928@0.23.1680.928" timestamp="1589295139593" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/engine/src/network/connection.go</url>
+          <url>file://$PROJECT_DIR$/src/engine/network/connection.go</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/engine/conf/ServerConfig.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="DlvErrorBreakpoint" />
+      </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="data" language="go" />
+        <watch expression="err" language="go" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

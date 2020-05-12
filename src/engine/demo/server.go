@@ -6,20 +6,21 @@ import (
 )
 
 type TestRouter struct {
-	coreface.IRouter
+	network.BaseRouter
 }
 
 func (tr *TestRouter) PreHandle(request coreface.IRequest) {
 
 }
-func (tr *TestRouter) Handle((request coreface.IRequest) {
+func (tr *TestRouter) Handle(request coreface.IRequest) {
 
 }
-func (tr *TestRouter) PostHandle((request coreface.IRequest) {
+func (tr *TestRouter) PostHandle(request coreface.IRequest) {
 
 }
 
 func main() {
 	server := network.NewServer("v1")
+	server.AddRouter(&TestRouter{})
 	server.Serve()
 }

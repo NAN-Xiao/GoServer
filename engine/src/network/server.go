@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"server/src/engine/coreface"
+	"server/demo/engine/coreface"
 )
 
 type Server struct {

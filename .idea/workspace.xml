@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6aa61cfe-7556-4772-9385-8ba021e5b9fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/engine/demo/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/demo/server.go" afterDir="false" />
-    </list>
+    <list default="true" id="6aa61cfe-7556-4772-9385-8ba021e5b9fb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +41,29 @@
       <recent name="E:\GoServer\GoServer\src\engine\coreface" />
       <recent name="E:\GoServer\GoServer" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="goserver" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="server" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="goserver" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <package value="server" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
